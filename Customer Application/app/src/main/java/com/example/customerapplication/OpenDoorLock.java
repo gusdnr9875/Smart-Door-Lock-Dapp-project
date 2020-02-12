@@ -12,7 +12,9 @@ import android.nfc.NfcManager;
 import android.nfc.tech.NfcF;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.CalendarView;
 import android.widget.ImageView;
+import android.widget.TimePicker;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -26,6 +28,7 @@ public class OpenDoorLock extends AppCompatActivity {
     private IntentIntegrator qrScan;
     private ImageView iv;
     private String text;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
