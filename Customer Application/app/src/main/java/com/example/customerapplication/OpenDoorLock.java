@@ -62,11 +62,22 @@ public class OpenDoorLock extends AppCompatActivity {
     protected void onResume() {
 
         super.onResume();
-        if (adapter != null) {
+        if (adapter != null) { //전송 메소드 실행
             adapter.enableForegroundDispatch(this, pendingIntent, mlntentFilters, mNFCTechLists); //null, null : 모든태그 인식
             //이 문장에서 다음 액티비티로 데이터를 전송하게 된다.
         }
-
-
     }
+
+
+    @Override
+
+    protected void onPause() {
+        super.onPause();
+
+        if (adapter != null) {
+            adapter.disableForegroundDispatch(this); //수신
+            finish();
+        }
+    }
+
 }

@@ -19,7 +19,7 @@ public class MainMenu extends AppCompatActivity {
         startActivity(in);
     }
     public void sendTransition(View view){
-        Intent in = new Intent(MainMenu.this, ReservateHotel.class);
+        Intent in = new Intent(MainMenu.this, SignContract.class);
         startActivity(in);
     }
     public void openDoorLock(View view){

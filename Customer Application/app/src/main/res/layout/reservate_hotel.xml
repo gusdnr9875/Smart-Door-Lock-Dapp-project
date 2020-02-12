@@ -19,7 +19,7 @@
 
         android:id="@+id/image"
 
-        android:src="@drawable/ic_launcher"/>
+        android:src="@drawable/ic_launcher_foreground"/>
 
 
 
