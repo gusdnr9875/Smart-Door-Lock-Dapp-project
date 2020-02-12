@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void started(View view){
         Toast.makeText(getApplicationContext(),"버튼이 눌러졌습니다.",Toast.LENGTH_SHORT).show();
-        Intent in = new Intent(MainActivity.this, Main2Activity.class);
+        Intent in = new Intent(MainActivity.this, MainMenu.class);
         startActivity(in);
 
     }
