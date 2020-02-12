@@ -9,6 +9,8 @@ import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +23,8 @@ import java.util.FormatterClosedException;
 
 public class ReservateHotel extends AppCompatActivity {
 
+
+    Button button;
     //시간관련
     TimePicker timePicker;
     CalendarView calendarView;
@@ -29,18 +33,18 @@ public class ReservateHotel extends AppCompatActivity {
     //날짜를 저장하는 곳
     int year,month,dayofmonth;
     String totaldate;
-    String reservationTime;
+    String totaltime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reservate_hotel);
 
+        button =findViewById(R.id.button5);
         timePicker = findViewById(R.id.timePicker);
         calendarView = findViewById(R.id.calendarView);
 
         //시간 받아오기
-        reservationTime = Integer.toString(timePicker.getHour()) + ":" + Integer.toString(timePicker.getMinute());
-
+        totaltime= Integer.toString(timePicker.getHour()) + ":" + Integer.toString(timePicker.getMinute());
 
         //날짜받아오기
         Calendar cal =Calendar.getInstance();
@@ -50,11 +54,22 @@ public class ReservateHotel extends AppCompatActivity {
         totaldate = Integer.toString(year)+"-"+Integer.toString(month)+"-"+Integer.toString(dayofmonth);
 
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(); //인텐트 생성
+                intent.putExtra("INPUT_TEXT",totaldate + " " + totaltime); //name을 INPUT_TEXT로 날짜값들을 전달 합니다.
+                setResult(RESULT_OK,intent); //요청코드를 RESULT_OK로 설정
+                finish();
+            }
+        });
 
 
+    }
 
+    public void canceled(View view){
 
-
+        finish();
     }
 
 
