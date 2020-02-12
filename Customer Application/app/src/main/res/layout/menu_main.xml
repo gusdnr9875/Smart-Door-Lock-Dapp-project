@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:onClick="reservate"
         android:text="숙소 예약하기" />
 
     <Button
@@ -17,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
+        android:onClick="sendTransition"
         android:text="컨트랙터에 서명하기" />
 
     <Button
