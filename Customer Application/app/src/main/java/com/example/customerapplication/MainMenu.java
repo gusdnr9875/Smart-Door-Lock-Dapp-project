@@ -18,7 +18,14 @@ public class MainMenu extends AppCompatActivity {
         Intent in = new Intent(MainMenu.this, ReservateHotel.class);
         startActivity(in);
     }
-
+    public void sendTransition(View view){
+        Intent in = new Intent(MainMenu.this, ReservateHotel.class);
+        startActivity(in);
+    }
+    public void openDoorLock(View view){
+        Intent in = new Intent(MainMenu.this, OpenDoorLock.class);
+        startActivity(in);
+    }
 
 
 }
