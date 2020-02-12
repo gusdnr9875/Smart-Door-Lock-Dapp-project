@@ -48,5 +48,5 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 
     //qr
-    compile 'com.journeyapps:zxing-android-embedded:3.4.0'
+    implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
 }
