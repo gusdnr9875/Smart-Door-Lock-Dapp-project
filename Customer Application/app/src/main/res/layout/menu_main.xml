@@ -27,6 +27,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:onClick="openDoorLock"
-        android:text="도어락 열기" />
+        android:text="QR 코드 열기" />
 
 </LinearLayout>
