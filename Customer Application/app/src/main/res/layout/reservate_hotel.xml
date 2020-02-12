@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
 
         android:id="@+id/text"
-
+        android:shadowColor="#ff0100"
         android:textColor="#ffffff"/>
 
 
