@@ -21,15 +21,13 @@ contract OwnDoor {
         door.owner = msg.sender;
     }
     
-    function openDoor() public view returns(bool) {
-        // require(door.id == id);
-        if (door.bookingInfo[msg.sender].isBooked == true) {
-            if (now < door.bookingInfo[msg.sender].endTime) {
-                if (now > door.bookingInfo[msg.sender].startTime) {
-                    return true;
-                }
-            }
-        }
+    modifier isBooker(address booker) {
+        require(door.bookingInfo[msg.sender].isBooked == true);
+        require(now < door.bookingInfo[msg.sender].endTime);
+        require(now > door.bookingInfo[msg.sender].startTime);
+        _;
+    }
+    function openDoor() isBooker(msg.sender) public view returns(bool) {
         return false;
     }
     
