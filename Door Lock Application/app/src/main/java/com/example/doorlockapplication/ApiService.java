@@ -69,7 +69,7 @@ public class ApiService  extends AsyncTask<String, Void, Boolean> {
             }
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             if (timestamp.getTime() > i + 300000) {
-                return new Boolean(true);
+                return new Boolean(false);
             } else {
                 return new Boolean(true);
             }
