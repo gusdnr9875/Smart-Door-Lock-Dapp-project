@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     TextView address;
     Button button;
 
+    public static boolean open =false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         address = findViewById(R.id.address);
         button = findViewById(R.id.button);
 
+        if(open == false){
+
+        }
+        else {
+            Intent in = new Intent(MainActivity.this, success.class);
+            startActivity(in);
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,12 +66,56 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Scan Success", Toast.LENGTH_SHORT).show();
                 try {
                     JSONObject obj = new JSONObject(result.getContents());
-                    ContractService.openDoor();
+
+                    String total =  result.getContents();
+                    String adddress3,contractAddress3,data3;
+                    int fisrted = 0 , seconded =0;
+
+                    for(int i=0;i<total.length();i++){
+                       if(total.charAt(i)=='*'&& total.charAt(i)=='*' && fisrted == 0){
+                           fisrted = i;
+                       }
+                        else if(total.charAt(i)=='*'&& total.charAt(i)=='*'){
+                            seconded = i;
+                       }
+                    }
+                    data3 = total.substring(0,fisrted);
+                    contractAddress3 = total.substring(fisrted+2,seconded);
+                    adddress3 = total.substring(seconded+2);
+
+                  Log.i("good",data3);
+                  Log.i("good",contractAddress3);
+                  Log.i("good",adddress3);
+
+                    ContractService.openDoor(adddress3,contractAddress3,data3);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
                     Toast.makeText(MainActivity.this, result.getContents(), Toast.LENGTH_LONG).show();
-                    address.setText(result.getContents());
+                    //address.setText(result.getContents());
+
+
+                    String total =  result.getContents();
+                    String adddress3,contractAddress3,data3;
+                    int fisrted = 0 , seconded =0;
+
+                    for(int i=0;i<total.length();i++){
+                        if(total.charAt(i)=='*'&& total.charAt(i+1)=='*' && fisrted == 0){
+                            fisrted = i;
+                        }
+                        else if(total.charAt(i)=='*'&& total.charAt(i+1)=='*'){
+                            seconded = i;
+                        }
+                    }
+                    data3 = total.substring(0,fisrted);
+                    contractAddress3 = total.substring(fisrted+2,seconded);
+                    adddress3 = total.substring(seconded+2);
+
+                    Log.i("good",data3);
+                    Log.i("good",contractAddress3);
+                    Log.i("good",adddress3);
+
+                    ContractService.openDoor(adddress3,contractAddress3,data3);
                 }
             }
 

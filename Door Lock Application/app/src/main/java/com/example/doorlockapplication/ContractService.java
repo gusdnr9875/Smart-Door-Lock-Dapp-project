@@ -65,8 +65,12 @@ public class ContractService {
             List<TypeReference<Type>> outputParameters = func.getOutputParameters();
             List<Type> types = FunctionReturnDecoder.decode(value, outputParameters);
 //            return types.get(0);
+            Log.i("Asd",types.get(0).toString());
+
         } catch (Exception e) {
+            Log.i("Asd","1");
             e.printStackTrace();
+            Log.i("Asd",e.toString());
         }
     }
 
