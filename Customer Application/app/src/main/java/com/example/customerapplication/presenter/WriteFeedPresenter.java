@@ -22,7 +22,7 @@ import static java.util.Collections.singletonList;
 public class WriteFeedPresenter {
     public static String address;
 
-    public static final String CONTRACT_ADDRESS = "0x5dFcDc09966250F5ec678d1D28695211CEd672bb";
+    public static final String CONTRACT_ADDRESS = "0xbFa162ba4C12a2C4F94ed0e5de3495A9A3aBBCb3";
 
     public static Function createGetPostCountSmartContractCall() {
         return new Function("openDoor"
