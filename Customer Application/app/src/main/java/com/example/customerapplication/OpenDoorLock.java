@@ -23,10 +23,16 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
+import com.example.customerapplication.presenter.WriteFeedPresenter;
+import com.samsung.android.sdk.coldwallet.ScwCoinType;
+import com.samsung.android.sdk.coldwallet.ScwService;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class OpenDoorLock extends AppCompatActivity {
-
+    public static final String CONTRACT_ADDRESS = "0x5dFcDc09966250F5ec678d1D28695211CEd672bb";
+    public static String address;
     private IntentIntegrator qrScan;
     private ImageView iv;
     private String text;
@@ -40,9 +46,18 @@ public class OpenDoorLock extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.open_door_lock);
 
-        writeFeedPresenter = new WriteFeedPresenter();
-        text = writeFeedPresenter.makeTrx(writeFeedPresenter.address); //data 값을 받아서
 
+       // writeFeedPresenter = new WriteFeedPresenter();
+        WriteFeedPresenter.getEthereumAddress();;
+        text = WriteFeedPresenter.makeTrx(WriteFeedPresenter.address); //data 값을 받아서
+
+        text += "**";
+        text += CONTRACT_ADDRESS;  //컨트랙트어드레스
+        text += "**";
+
+       // Log.i("www",WriteFeedPresenter.address);
+        WriteFeedPresenter.getEthereumAddress();
+        text += WriteFeedPresenter.address ;
         iv = (ImageView)findViewById(R.id.qrcode);
         textView =findViewById(R.id.textView);
 
@@ -55,6 +70,18 @@ public class OpenDoorLock extends AppCompatActivity {
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             iv.setImageBitmap(bitmap);
         }catch (Exception e){}
+
+
     }
+
+
+
+
+
+
+
+
+
+
 
 }

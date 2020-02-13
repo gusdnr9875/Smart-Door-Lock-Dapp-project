@@ -4,6 +4,7 @@ package com.example.customerapplication.presenter;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.customerapplication.OpenDoorLock;
 import com.samsung.android.sdk.coldwallet.ScwCoinType;
 import com.samsung.android.sdk.coldwallet.ScwService;
 
@@ -32,6 +33,7 @@ public class WriteFeedPresenter {
     public static String makeTrx(String address) {
         Function func = createGetPostCountSmartContractCall();
         String data = FunctionEncoder.encode(func);
+        Log.i("aaaa",data);
         return data;
     }
 
@@ -43,6 +45,7 @@ public class WriteFeedPresenter {
                     public void onSuccess(List<String> addressList) {
                         Log.i("hello", addressList.get(0)); //public address
                         address = addressList.get(0);
+                        Log.i("qqq",address);
                     }
 
                     @Override
@@ -58,6 +61,6 @@ public class WriteFeedPresenter {
         ScwService.getInstance().getAddressList(callback, hdPathList);
     }
 
-
+    public static  String getadd(){return address;}
 
 }

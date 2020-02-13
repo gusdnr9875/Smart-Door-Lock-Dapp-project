@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#ffffff"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
     <CalendarView
@@ -44,6 +45,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="reservation"
+            android:background="@drawable/button_background"
+
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#ffffff"
+
             android:text="예약하기" />
 
         <Button
@@ -52,6 +59,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="canceled"
+            android:background="@drawable/button_background"
+            android:textColor="#ffffff"
+            android:layout_marginRight="20dp"
+
             android:text="취소" />
     </LinearLayout>
 
