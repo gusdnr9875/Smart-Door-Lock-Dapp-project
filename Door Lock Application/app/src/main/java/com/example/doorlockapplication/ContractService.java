@@ -73,7 +73,12 @@ public class ContractService {
                 List<TypeReference<Type>> outputParameters = func.getOutputParameters();
                 List<Type> types = FunctionReturnDecoder.decode(value, outputParameters);
                 Log.i("Asd", types.get(0).toString());
-                return new Boolean(types.get(0).toString());
+                if (types.get(0).toString().equals("true")) {
+                    return new Boolean(true);
+
+                } else {
+                    return new Boolean(false);
+                }
             } catch (MalformedURLException e) {
                 //
                 e.printStackTrace();
