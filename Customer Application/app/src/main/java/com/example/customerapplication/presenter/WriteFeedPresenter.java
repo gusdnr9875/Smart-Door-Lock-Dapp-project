@@ -31,6 +31,8 @@ public class WriteFeedPresenter {
         }));
     }
     public static String makeTrx(String address) {
+
+
         Function func = createGetPostCountSmartContractCall();
         String data = FunctionEncoder.encode(func);
         Log.i("aaaa",data);
@@ -61,6 +63,6 @@ public class WriteFeedPresenter {
         ScwService.getInstance().getAddressList(callback, hdPathList);
     }
 
-    public static  String getadd(){return address;}
+
 
 }
