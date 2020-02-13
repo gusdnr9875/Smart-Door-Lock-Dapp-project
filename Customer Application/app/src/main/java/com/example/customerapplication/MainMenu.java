@@ -18,7 +18,7 @@ public class MainMenu extends AppCompatActivity {
 
     // 예외처리를 위한 버튼
     boolean reservation = false; //예약했는지
-    boolean signing = false; // 트랜잭션 전송했는지
+    //boolean signing = false; // 트랜잭션 전송했는지
 
 
     // MediaPlayer 객체생성
@@ -55,18 +55,8 @@ public class MainMenu extends AppCompatActivity {
     }
 
 
-    public void sendTransition(View view){
-        if( reservation == true) {
-            Intent in = new Intent(MainMenu.this, SignContract.class);
-            startActivity(in);
-            signing = true;
-        }
-        else{
-            Toast.makeText(MainMenu.this, "숙소를 먼저 예약하세요.", Toast.LENGTH_SHORT).show();
-        }
-    }
     public void openDoorLock(View view){
-        if(signing ==true){
+        if(reservation == true){
         Intent in = new Intent(MainMenu.this, OpenDoorLock.class);
         startActivity(in);
         }
