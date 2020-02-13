@@ -47,6 +47,18 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 
+
     //qr
     implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
+
+
+    //exampless
+   // implementation "com.android.support:appcompat-v7:$supportLibVersion"
+   // implementation "com.android.support:design:$supportLibVersion"
+    implementation "com.android.support:support-emoji:$supportLibVersion"
+    implementation "com.android.support:support-emoji-appcompat:$supportLibVersion"
+    implementation "com.android.support:support-emoji-bundled:$supportLibVersion"
+
+    implementation 'org.web3j:core:4.1.1'
+
 }
