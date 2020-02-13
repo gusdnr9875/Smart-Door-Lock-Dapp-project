@@ -1,10 +1,14 @@
 package com.example.customerapplication;
 
+
+import android.app.Activity;
 import android.util.Log;
 
-import java8.util.concurrent.CompletableFuture;
+import com.samsung.android.sdk.coldwallet.ScwCoinType;
+import com.samsung.android.sdk.coldwallet.ScwService;
+
+import java.util.Arrays;
 
 public class DBManager {
-
 
 }
