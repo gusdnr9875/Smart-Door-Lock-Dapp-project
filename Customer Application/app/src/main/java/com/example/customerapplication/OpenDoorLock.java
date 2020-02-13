@@ -14,8 +14,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.CalendarView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.customerapplication.presenter.WriteFeedPresenter;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
@@ -28,16 +30,23 @@ public class OpenDoorLock extends AppCompatActivity {
     private IntentIntegrator qrScan;
     private ImageView iv;
     private String text;
+    TextView textView;
 
+    // test
+    private WriteFeedPresenter writeFeedPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.open_door_lock);
 
+        writeFeedPresenter = new WriteFeedPresenter();
+        text = writeFeedPresenter.makeTrx(writeFeedPresenter.address); //data 값을 받아서
 
         iv = (ImageView)findViewById(R.id.qrcode);
-        text = "0x459451d1229fa9d8d02c97b2352408465a293158";
+        textView =findViewById(R.id.textView);
+
+        textView.setText(text);
 
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try{
