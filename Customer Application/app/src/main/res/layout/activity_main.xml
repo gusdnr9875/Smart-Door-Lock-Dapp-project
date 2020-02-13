@@ -3,41 +3,16 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="whind"
-            android:textSize="30dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="OwnDoor"
-            android:textSize="30dp"/>
-    </LinearLayout>
+    android:orientation="vertical"
+    android:background="@drawable/mainmenu"
+    >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="300dp">
+        android:layout_marginTop="570dp">
 
         <Button
             android:id="@+id/button"
@@ -47,7 +22,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:onClick="started"
-            android:text="시작하기" />
+            android:background="#60269E"
+            android:text="START"
+            android:textSize="15sp"
+            android:textColor="#ffffff"
+            />
     </LinearLayout>
 
 </LinearLayout>
