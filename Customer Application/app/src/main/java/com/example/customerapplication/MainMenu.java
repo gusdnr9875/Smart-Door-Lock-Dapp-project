@@ -48,7 +48,7 @@ public class MainMenu extends AppCompatActivity {
 
     @Override
     protected  void onActivityResult(int requsetCode,int resultCode,Intent data ){ //만약 값이 전달 될때
-       
+
         super.onActivityResult(1, resultCode, data);
         if(requsetCode==GET_STRING) //요청코드가 1이고
             if(resultCode==RESULT_OK){ //결과코드가 RESUL_OK값이면

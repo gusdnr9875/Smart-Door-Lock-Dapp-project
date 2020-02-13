@@ -32,6 +32,7 @@ public class ReservateHotel extends AppCompatActivity {
 
     //날짜를 저장하는 곳
     int year,month,dayofmonth;
+    int hour, minuted;
     String totaldate;
     String totaltime;
     @Override
@@ -47,6 +48,7 @@ public class ReservateHotel extends AppCompatActivity {
         totaltime= Integer.toString(timePicker.getHour()) + ":" + Integer.toString(timePicker.getMinute());
 
         //날짜받아오기
+
         Calendar cal =Calendar.getInstance();
         year = cal.get(cal.YEAR);
         month = cal.get(cal.MONTH);
@@ -64,11 +66,27 @@ public class ReservateHotel extends AppCompatActivity {
             }
         });
 
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() { //캘린더뷰가 클릭되면 해당 리스너의
+            public void onSelectedDayChange(CalendarView view, int year1, int month1, int dayOfMonth1) {
+                year = year1;   //설정된 날짜의 값을  year,month, dayofMonth에 저장해주는 것입니다.
+                month = month1;
+                dayofmonth = dayOfMonth1;
+                totaldate = Integer.toString(year)+"-"+Integer.toString(month + 1)+"-"+Integer.toString(dayofmonth);
+            }
+        });
+
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                hour = hourOfDay;
+                minuted = minute;
+                totaltime= ( Integer.toString(hour )+ ":" + Integer.toString(minuted));
+            }
+        });
 
     }
 
     public void canceled(View view){
-
         finish();
     }
 

@@ -11,7 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weekNumberColor="#ffffff"
-        />
+    android:focusedMonthDateColor="#ff0000"
+    android:unfocusedMonthDateColor="#0000ff"
+    android:selectedWeekBackgroundColor="#ffff00"
+        android:showWeekNumber="false"
+    android:weekSeparatorLineColor="#00ff00"
+
+    />
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
