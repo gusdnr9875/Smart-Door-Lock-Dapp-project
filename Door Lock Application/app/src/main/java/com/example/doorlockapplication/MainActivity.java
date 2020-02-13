@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,12 +11,9 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.samsung.android.sdk.coldwallet.ScwCoinType;
-import com.samsung.android.sdk.coldwallet.ScwService;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     //qr code scanner object
@@ -55,28 +51,19 @@ public class MainActivity extends AppCompatActivity {
         if (result != null) {
             //qrcode 가 없으면
             if (result.getContents() == null) {
-                Toast.makeText(MainActivity.this, "취소!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Cancel!", Toast.LENGTH_SHORT).show();
             } else {
                 //qrcode 결과가 있으면
-                Toast.makeText(MainActivity.this, "스캔완료!", Toast.LENGTH_SHORT).show();
-//                try {
-                    //data를 json으로 변환
-//                    JSONObject obj = new JSONObject(result.getContents());
+                Toast.makeText(MainActivity.this, "Scan Success", Toast.LENGTH_SHORT).show();
+                try {
+                    JSONObject obj = new JSONObject(result.getContents());
+                    ContractService.openDoor();
 
-                    String signedTrx = "";
-                    Temp.getEthereumAddress();
-//                    try {
-//                        RemoteManager.getInstance().sendRawTransaction(signedTrx);
-//                    } catch (Exception e) {
-//                        Log.e("SendRawTransaction", e.getMessage());
-//                    }
-//                    address.setText(obj.getString("name"));
-
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                    Toast.makeText(MainActivity.this, result.getContents(), Toast.LENGTH_LONG).show();
-//                    address.setText(result.getContents());
-//                }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this, result.getContents(), Toast.LENGTH_LONG).show();
+                    address.setText(result.getContents());
+                }
             }
 
         } else {

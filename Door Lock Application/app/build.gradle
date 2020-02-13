@@ -42,6 +42,7 @@ dependencies {
 
     //Custom
     implementation 'com.samsung.android.sdk.coldwallet:KeystoreSDK_v1.2.0@aar'
+    implementation name: 'BlockchainPlatformSDK_1.0.00', ext: 'aar'
     implementation 'commons-codec:commons-codec:1.12'
     implementation 'org.web3j:core:4.2.0-android' //이게 웹3 제이에스추가할때 필요한거
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'

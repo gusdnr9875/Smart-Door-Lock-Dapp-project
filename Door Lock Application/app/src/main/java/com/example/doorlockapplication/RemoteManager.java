@@ -55,6 +55,5 @@ public class RemoteManager {
     private static class LazyHolder {
         private static final RemoteManager INSTANCE = new RemoteManager();
     }
-
 }
 
