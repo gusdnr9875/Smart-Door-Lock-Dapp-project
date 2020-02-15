@@ -1,6 +1,6 @@
 
 # 03_흰천과바람만있으면어디든갈수있조
-# 프로젝트명: owndoor (블럭체인 기반 스마트 도어락 시스템)
+# 프로젝트명: owndoor (블록체인 기반 스마트 도어락 시스템)
 
 
 <img src="https://user-images.githubusercontent.com/60721114/74486076-7f719a80-4eff-11ea-8937-3082be60e5ab.png" width="90%"></img>
