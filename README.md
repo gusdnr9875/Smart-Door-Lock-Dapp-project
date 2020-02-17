@@ -5,10 +5,10 @@
 
 <img src="https://user-images.githubusercontent.com/60721114/74486076-7f719a80-4eff-11ea-8937-3082be60e5ab.png" width="90%"></img>
 
-Notion URL 1: https://www.notion.so/93047daf8800464397f69cb7963bca87
-Notion URL 2: https://www.notion.so/3809cf810fc140b1b2c2c1c11ac4576e
-Notion URL 3: https://www.notion.so/20200210_-26df782b1b4f4ed7b0b08d35b8ee4f8c
-Notion URL 4: https://www.notion.so/20200212_-e06b035bed82460ba5038d755d2fc636
+Notion URL 1: https://www.notion.so/93047daf8800464397f69cb7963bca87 <br>
+Notion URL 2: https://www.notion.so/3809cf810fc140b1b2c2c1c11ac4576e <br>
+Notion URL 3: https://www.notion.so/20200210_-26df782b1b4f4ed7b0b08d35b8ee4f8c <br>
+Notion URL 4: https://www.notion.so/20200212_-e06b035bed82460ba5038d755d2fc636 <br>
 
 # 기본기능
 --
