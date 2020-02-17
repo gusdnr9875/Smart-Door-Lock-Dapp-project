@@ -132,5 +132,7 @@ http://www.zdnet.co.kr/view/?no=20170908170116
 비콘을 활용한 공간 안전정보 알림 애플리케이션 개발 연구: 공유숙박 서비스를 중심으로 [한양대학교 대학원, 2020] 임한빛
 
 
+
+<img src="https://user-images.githubusercontent.com/38147253/74647631-5c750e00-51bf-11ea-9e4a-8346e8ba656e.jpg" width="90%"></img>
 감사합니다:)
 --
