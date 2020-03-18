@@ -1,5 +1,5 @@
 
-# 03_흰천과바람만있으면어디든갈수있조
+# SAMSUNG Blockchain Hackathon 최우수상작품입니다. 
 # 프로젝트명: owndoor (블록체인 기반 스마트 도어락 시스템)
 
 
