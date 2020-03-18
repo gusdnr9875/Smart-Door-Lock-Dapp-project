@@ -1,5 +1,4 @@
-
-# SAMSUNG Blockchain Hackathon 최우수상작품입니다. 
+# Founders 3기 -(3조) 흰천과 바람만 있다면 어디든 갈 수 있 조 <스마트 도어락 dapp> 
 # 프로젝트명: owndoor (블록체인 기반 스마트 도어락 시스템)
 
 
